@@ -68,7 +68,7 @@ function command(e) {
 				log("&nbsp;");
 				break;
 			case "about":
-				alert("Diego PERINI\n\nE-mail: \ndiego@dperini.com\n\nSteam ID: \ndiegodeddo\n\nOrigin ID: \ndiegodeddo\n\n\nAny Javascript code found in this site\n(except JQuery) can freely be used without \nany permission. You may use jQuery project \nunder the terms of the MIT License. \n\nDejaVuSansMono typeface is freely available \nunder Public Domain.\n\n\nLast updated 18th March 2013");
+				alert("Diego PERINI\n\nGithub: \ndiegoperini\n\nE-mail: \ndiego@dperini.com\n\nSteam ID: \ndiegodeddo\n\nOrigin ID: \ndiegodeddo\n\n\nAny Javascript code found in this site\n(except JQuery) can freely be used without \nany permission. You may use jQuery project \nunder the terms of the MIT License. \n\nDejaVuSansMono typeface is freely available \nunder Public Domain.\n\n\nLast updated 18th March 2013");
 				break;
 			case "linkedin":
 				window.open('http://www.linkedin.com/in/diegoperini','_newtab');
