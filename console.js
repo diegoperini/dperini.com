@@ -1,3 +1,4 @@
+//Capture keyboard focus repeatedly
 window.onload = function(){
 	window.setInterval(
 		function commandFocus() {
@@ -5,83 +6,120 @@ window.onload = function(){
 		},
 		300
 	);
-};
+}
 
+//On screen println equiv
 function log(new_row) {
-	$("#console-log-row-12").html($("#console-log-row-11").html());
-	$("#console-log-row-11").html($("#console-log-row-10").html());
-	$("#console-log-row-10").html($("#console-log-row-9").html());
-	$("#console-log-row-9").html($("#console-log-row-8").html());
-	$("#console-log-row-8").html($("#console-log-row-7").html());
-	$("#console-log-row-7").html($("#console-log-row-6").html());
-	$("#console-log-row-6").html($("#console-log-row-5").html());
-	$("#console-log-row-5").html($("#console-log-row-4").html());
-	$("#console-log-row-4").html($("#console-log-row-3").html());
-	$("#console-log-row-3").html($("#console-log-row-2").html());
-	$("#console-log-row-2").html($("#console-log-row-1").html());
+	NUM_OF_ROWS = 12;
+	for (var i = NUM_OF_ROWS; i > 1; i--) 
+		$("#console-log-row-" + String(i)).html($("#console-log-row-" + String(i-1)).html());
 	$("#console-log-row-1").html(new_row);
 }
 
+////////////Commands////////////
+var help = { 
+	command_alias_list: ["help"],
+	on_execute: function(args) {
+		log("&nbsp;");
+		log("&nbsp;");
+		log("&nbsp;");
+		log("Welcome to Diego Perini's personal website.");
+		log("&nbsp;");
+		log("These are available commands that you can invoke:");
+		log("help, linkedin, github, about, mailto");
+		log("&nbsp;");
+		log("Have fun!");
+		log("&nbsp;");
+		log("&nbsp;");
+		log("&nbsp;");
+	}
+}
+
+var cls = { 
+	command_alias_list: ["clear", "cls"],
+	on_execute: function(args) {
+		for (var i = NUM_OF_ROWS; i > 0; i--) 
+			$("#console-log-row-" + String(i)).html("&nbsp;");
+	}
+}
+
+var nerd = { 
+	command_alias_list: ["cd", "chmod", "ls"],
+	on_execute: function(args) {
+		log("Leave it alone nerd! (-_-\")");
+	}
+}
+
+var acm = { 
+	command_alias_list: ["acm"],
+	on_execute: function(args) {
+		log("&nbsp;");
+		log("All Hail ACIMAYIZ!");
+		log("&nbsp;");
+	}
+}
+
+var about = { 
+	command_alias_list: ["about"],
+	on_execute: function(args) {
+		alert("Diego PERINI\n\nE-mail: \ndiego@dperini.com\n\nSteam ID: \ndiegodeddo\n\nOrigin ID: \ndiegodeddo\n\n\nAny Javascript code found in this site\n(except JQuery) can freely be used without \nany permission. You may use jQuery project \nunder the terms of the MIT License. \n\nDejaVuSansMono typeface is freely available \nunder Public Domain.\n\n\nLast updated 10th August 2013");
+	}
+}
+
+var linkedin = { 
+	command_alias_list: ["linkedin"],
+	on_execute: function(args) {
+		window.open('http://www.linkedin.com/in/diegoperini','_newtab');
+	}
+}
+
+var github = { 
+	command_alias_list: ["github"],
+	on_execute: function(args) {
+		window.open('https://github.com/diegoperini','_newtab');
+	}
+}
+
+var mailto = { 
+	command_alias_list: ["mailto"],
+	on_execute: function(args) {
+		window.open('mailto:diego@dperini.com','_newtab');
+	}
+}
+////////////////////////////////
+
+//Available commands
+var commands = {
+	registered: [help, cls, nerd, acm, about, linkedin, github, mailto]
+}
+
+//Executes a command
 function command(e) {
 	if (e.keyCode == 13) {
+		//if command is empty empty 
 		var text = $("#console-command").val();
 		if(text == "")
 			return false;
-		switch(text) {
-			case "help":
-				log("&nbsp;");
-				log("&nbsp;");
-				log("&nbsp;");
-				log("Welcome to Diego Perini's personal website.");
-				log("&nbsp;");
-				log("These are available commands that you can invoke:");
-				log("help, linkedin, github, about, mailto");
-				log("&nbsp;");
-				log("Have fun!");
-				log("&nbsp;");
-				log("&nbsp;");
-				log("&nbsp;");
-				break;
-			case "clear":
-			case "cls":
-				$("#console-log-row-1").html("&nbsp;");
-				$("#console-log-row-2").html("&nbsp;");
-				$("#console-log-row-3").html("&nbsp;");
-				$("#console-log-row-4").html("&nbsp;");
-				$("#console-log-row-5").html("&nbsp;");
-				$("#console-log-row-6").html("&nbsp;");
-				$("#console-log-row-7").html("&nbsp;");
-				$("#console-log-row-8").html("&nbsp;");
-				$("#console-log-row-9").html("&nbsp;");
-				$("#console-log-row-10").html("&nbsp;");
-				$("#console-log-row-11").html("&nbsp;");
-				$("#console-log-row-12").html("&nbsp;");
-				break;
-			case "ls":
-			case "chmod":
-			case "cd":
-				log("Leave it alone nerd! (-_-\")");
-				break;
-			case "acm":
-				log("&nbsp;");
-				log("All Hail ACIMAYIZ!");
-				log("&nbsp;");
-				break;
-			case "about":
-				alert("Diego PERINI\n\nE-mail: \ndiego@dperini.com\n\nSteam ID: \ndiegodeddo\n\nOrigin ID: \ndiegodeddo\n\n\nAny Javascript code found in this site\n(except JQuery) can freely be used without \nany permission. You may use jQuery project \nunder the terms of the MIT License. \n\nDejaVuSansMono typeface is freely available \nunder Public Domain.\n\n\nLast updated 10th August 2013");
-				break;
-			case "linkedin":
-				window.open('http://www.linkedin.com/in/diegoperini','_newtab');
-				break;
-			case "github":
-				window.open('https://github.com/diegoperini','_newtab');
-				break;
-			case "mailto":
-				window.open('mailto:diego@dperini.com','_newtab');
-				break;
-			default:
-				log("Unknown command: " + text);
-		}
+
+		//Invoke command with arguments
+		var invoked = false;
+		var cmd = text.split(" ");
+		for (var i = commands.registered.length - 1; i >= 0; i--) {
+			var to_invoke = commands.registered[i];
+			for (var j = to_invoke.command_alias_list.length - 1; j >= 0; j--) {
+				if(to_invoke.command_alias_list[j] == cmd[0]) {
+					to_invoke.on_execute(cmd);
+					invoked = true;
+					break;
+				}
+			};
+			
+		};
+
+		if(!invoked)
+			log("Unknown command \"" + cmd[0] + "\"");
+
+		//Clear command line
 		$("#console-command").val("");
         return false;
     }
