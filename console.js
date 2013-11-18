@@ -62,7 +62,7 @@ var acm = {
 var about = { 
 	command_alias_list: ["about"],
 	on_execute: function(args) {
-		alert("Diego PERINI\n\nE-mail: \ndiego@dperini.com\n\nSteam ID: \ndiegodeddo\n\nOrigin ID: \ndiegodeddo\n\n\nAny Javascript code found in this site\n(except JQuery) can freely be used without \nany permission. You may use jQuery project \nunder the terms of the MIT License. \n\nDejaVuSansMono typeface is freely available \nunder Public Domain.\n\n\nLast updated 10th August 2013");
+		alert("Diego PERINI\n\nE-mail: \ndiego@dperini.com\n\nSteam ID: \ndiegodeddo\n\nOrigin ID: \ndiegodeddo\n\n\nAny Javascript code found in this site\n(except JQuery) can freely be used without \nany permission. You may use jQuery project \nunder the terms of the MIT License. \n\nDejaVuSansMono typeface is freely available \nunder Public Domain.\n\n\nLast updated 18th November 2013");
 	}
 }
 
