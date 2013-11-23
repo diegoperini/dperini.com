@@ -12,17 +12,17 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 html {
     height: 100%;
@@ -32,26 +32,26 @@ font-family: dejamono;
 src: url("ttf/DejaVuSansMono.ttf");
 }
 body {
-	font-family: dejamono;
-	font-size: 13px;
+    font-family: dejamono;
+    font-size: 13px;
     height: 100%;
-	line-height: 1;
+    line-height: 1;
     background-color: rgb(230,230,230);
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 textarea:focus, input:focus {
     outline: none;
@@ -59,37 +59,51 @@ textarea:focus, input:focus {
 /******************************************************/
 
 #console-background {
-	position: absolute;
-	background-color: #0B0819;
-	color: #CCCCFF;
-	width: 100%;
-	min-height: 100%;
+    position: absolute;
+    background-color: #0B0819;
+    color: #CCCCFF;
+    width: 100%;
+    min-height: 100%;
 }
 
 #console-title {
-	font-size: 19px;
+    font-size: 19px;
 }
 
 #console-log {
-	border-bottom: #CCCCFF 1px solid;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	padding-left: 15px;
-	padding-bottom: 5px;
+    border-bottom: #CCCCFF 1px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    padding-bottom: 5px;
 }
 
 #console-command {
-	width: 100%;
-	float: left;
-	margin: 0px;
-	padding: 0px;
-	background-color: rgba(0,0,0,0);
-	border: none;
-	color: #CCCCFF;
-	font-family: dejamono;
+    width: 100%;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    color: #CCCCFF;
+    font-family: dejamono;
 }
 
 #console-cursor {
-	float: left;
-	font-family: dejamono;
+    float: left;
+    font-family: dejamono;
+}
+
+.console-link {
+    color: orange;
+    cursor: pointer;
+}
+
+
+.console-link:visited {
+    color: orange;
+}
+
+.console-link:hover {
+    color: blue;
 }
