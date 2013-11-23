@@ -106,6 +106,8 @@ var who = {
         log("&nbsp;");
         log("If you don't think you are like me, please refer to the user friendly site.");
         log("&nbsp;");
+        log("&nbsp;");
+        log("&nbsp;");
     }
 }
 ////////////////////////////////
