@@ -68,6 +68,7 @@ textarea:focus, input:focus {
 
 #console-title {
     font-size: 19px;
+    color: orange;
 }
 
 #console-log {
@@ -95,15 +96,16 @@ textarea:focus, input:focus {
 }
 
 .console-link {
-    color: orange;
+    color: #428BCA;
     cursor: pointer;
 }
 
 
 .console-link:visited {
-    color: orange;
+    color: #428BCA;
 }
 
 .console-link:hover {
-    color: blue;
+    color: #2A6496;
+    text-decoration: underline;
 }

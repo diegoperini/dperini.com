@@ -101,6 +101,13 @@ var pgp = {
     }
 }
 
+var blog = { 
+    command_alias_list: ["blog"],
+    on_execute: function(args) {
+        window.open('http://blog.dperini.com/','_blank');
+    }
+}
+
 var who = { 
     command_alias_list: ["who", "who_are_you"],
     on_execute: function(args) {
@@ -121,7 +128,7 @@ var who = {
 
 //Available commands
 var commands = {
-    registered: [help, cls, nerd, acm, about, linkedin, github, mailto, doppl, who, pgp]
+    registered: [help, cls, nerd, acm, about, linkedin, github, mailto, doppl, who, pgp, blog]
 }
 
 //Executes a command
