@@ -26,7 +26,7 @@ var help = {
         log("Welcome to Diego Perini's personal website.");
         log("&nbsp;");
         log("These are available commands that you can invoke:");
-        log("help, who, doppl, linkedin, github, about, mailto, pgp");
+        log("help, who, blog, doppl, linkedin, github, about, mailto, pgp");
         log("&nbsp;");
         log("(there are some hidden ones as well, discover yourself)");
         log("&nbsp;");
