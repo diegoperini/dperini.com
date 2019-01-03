@@ -59,7 +59,6 @@ textarea:focus, input:focus {
 /******************************************************/
 
 #console-background {
-    position: absolute;
     background-color: #0B0819;
     color: #CCCCFF;
     width: 100%;
