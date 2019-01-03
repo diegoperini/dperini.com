@@ -1,0 +1,1 @@
+aws s3 sync root s3://dperini.com
